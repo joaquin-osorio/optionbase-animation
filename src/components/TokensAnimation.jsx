@@ -21,7 +21,7 @@ const TokensAnimation = () => {
     const repeatDelay = -0.5; // Overlap for seamless repetition
 
     return (
-        <div className="flex justify-center items-center h-[500px] mt-[-50px] relative z-[9999] overflow-hidden">
+        <div className="flex justify-center items-center h-[550px] mt-[-50px] relative overflow-hidden">
             {icons.map((icon, index) => {
                 const { x, y } = generateBalancedPosition(index, icons.length, distance);
                 return (
@@ -29,7 +29,7 @@ const TokensAnimation = () => {
                         key={index}
                         initial={{ opacity: 0, scale: 1, x: 0, y: 0 }}
                         animate={{
-                            opacity: [0, 1, 1, 0], // Fade in, stay, fade out
+                            opacity: [0, 1, 0], // Fade in and fade out
                             scale: 0.9,
                             x,
                             y,
@@ -37,7 +37,7 @@ const TokensAnimation = () => {
                         transition={{
                             delay: index * delayBetweenIcons,
                             duration: animationDuration,
-                            times: [0.1, 0.2, 0.65, 0.7], // Fast fade in, stay, fast fade out
+                            times: [0, 0.25, 0.9],
                             ease: 'linear',
                             repeat: Infinity,
                             repeatDelay,
