@@ -10,7 +10,7 @@ import React from 'react';
 
 const TokenLogo = ({ logo }) => {
     return (
-        <div style={{ width: '25px', height: '25px' }}>
+        <div className='z-10' style={{ width: '25px', height: '25px' }}>
             <img src={logo} alt="Token Logo" style={{ width: '100%', height: '100%' }} />
         </div>
     );
